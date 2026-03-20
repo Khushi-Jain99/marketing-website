@@ -1,0 +1,56 @@
+<section class="container-shell mt-8" [@fadeInUp]>
+	<h1 class="text-4xl text-[var(--wood-900)] md:text-5xl">About Our Business</h1>
+	<p class="mt-3 max-w-3xl text-[var(--muted)]">
+		Vardhman Ply Palace is a trusted partner for carpenters, interior designers, contractors, and homeowners.
+		We provide premium plywood, laminates, boards, and fittings with honest recommendations and dependable service.
+	</p>
+
+	<div class="mt-7 grid gap-4 md:grid-cols-3" [@staggerCards]>
+		@for (item of highlights; track item.label) {
+			<article class="section-card stagger-item p-5 text-center">
+				<p class="text-3xl font-bold text-[var(--wood-800)]">{{ item.value }}</p>
+				<p class="mt-2 text-sm font-semibold text-[var(--muted)]">{{ item.label }}</p>
+			</article>
+		}
+	</div>
+
+	<div class="section-card mt-8 p-6 md:p-8" [@fadeInUp]>
+		<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--wood-700)]">Who We Serve</p>
+		<div class="mt-4 flex flex-wrap gap-3">
+			@for (item of servedFor; track item) {
+				<span class="pill-tag">{{ item }}</span>
+			}
+		</div>
+	</div>
+
+	<div class="section-card mt-8 grid gap-5 p-6 md:grid-cols-2" [@fadeInUp]>
+		<div>
+			<h2 class="text-2xl text-[var(--wood-900)]">Our Mission</h2>
+			<p class="mt-2 text-[var(--muted)]">
+				To make premium quality materials accessible with transparent pricing, practical guidance, and strong after-sales support.
+			</p>
+		</div>
+		<div>
+			<h2 class="text-2xl text-[var(--wood-900)]">Our Values</h2>
+			<ul class="mt-2 list-disc space-y-1 pl-5 text-[var(--muted)]">
+				<li>Quality first in every product category</li>
+				<li>Customer-focused recommendations</li>
+				<li>Long-term relationships over one-time sales</li>
+				<li>Consistent support for renovation and bulk projects</li>
+			</ul>
+		</div>
+	</div>
+
+	<section class="mt-8" [@fadeInUp]>
+		<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">Our Journey</h2>
+		<div class="mt-5 grid gap-4">
+			@for (item of timeline; track item.year) {
+				<article class="timeline-item section-card p-5">
+					<p class="text-sm font-bold text-[var(--wood-700)]">{{ item.year }}</p>
+					<h3 class="mt-1 text-xl font-semibold text-[var(--wood-900)]">{{ item.title }}</h3>
+					<p class="mt-2 text-sm text-[var(--muted)]">{{ item.text }}</p>
+				</article>
+			}
+		</div>
+	</section>
+</section>

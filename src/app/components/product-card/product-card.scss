@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+
+article {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+article:hover img {
+  transform: scale(1.03);
+}
+
+img {
+  transition: transform 0.35s ease;
+}

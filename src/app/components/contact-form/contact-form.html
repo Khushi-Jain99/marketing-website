@@ -1,0 +1,23 @@
+<form class="section-card space-y-4 p-5 md:p-7" [formGroup]="form" (ngSubmit)="submit()">
+	<h3 class="font-display text-2xl text-[var(--wood-900)]">Send Your Requirement</h3>
+
+	<label class="block text-sm font-semibold text-[var(--wood-800)]">
+		Name
+		<input formControlName="name" type="text" class="form-input mt-1" placeholder="Your name" />
+	</label>
+
+	<label class="block text-sm font-semibold text-[var(--wood-800)]">
+		Phone
+		<input formControlName="phone" type="tel" class="form-input mt-1" placeholder="10-digit mobile number" />
+	</label>
+
+	<label class="block text-sm font-semibold text-[var(--wood-800)]">
+		Message
+		<textarea formControlName="message" rows="4" class="form-input mt-1" placeholder="Tell us what you need"></textarea>
+	</label>
+
+	<button type="submit" class="wood-btn" [disabled]="loading">{{ loading ? 'Submitting...' : 'Submit Inquiry' }}</button>
+	@if (status) {
+		<p class="text-sm font-semibold text-green-700">{{ status }}</p>
+	}
+</form>

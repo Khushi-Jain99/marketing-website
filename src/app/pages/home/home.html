@@ -1,0 +1,108 @@
+<app-hero
+	heading="Built for Strength, Finished with Style"
+	subheading="Your one-stop destination for premium plywood, laminates, boards, and hardware."
+></app-hero>
+
+<section class="container-shell mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" [@fadeInUp]>
+	@for (stat of stats; track stat.label) {
+		<div class="section-card p-5 text-center">
+			<p class="text-3xl font-bold text-[var(--wood-900)]">{{ stat.value }}</p>
+			<p class="mt-1 text-sm font-semibold text-[var(--muted)]">{{ stat.label }}</p>
+		</div>
+	}
+</section>
+
+<section class="container-shell mt-12" [@fadeInUp]>
+	<div class="mb-5 flex items-end justify-between gap-4">
+		<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">Why Choose Us</h2>
+		<p class="max-w-xl text-sm text-[var(--muted)]">We combine quality products with expert support to help you build interiors that last.</p>
+	</div>
+	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" [@staggerCards]>
+		@for (item of whyChoose; track item.title) {
+			<article class="section-card stagger-item p-5">
+				<h3 class="text-lg font-semibold text-[var(--wood-800)]">{{ item.title }}</h3>
+				<p class="mt-2 text-sm text-[var(--muted)]">{{ item.text }}</p>
+			</article>
+		}
+	</div>
+</section>
+
+<section class="container-shell mt-12" [@fadeInUp]>
+	<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">What We Supply</h2>
+	<p class="mt-2 max-w-3xl text-sm text-[var(--muted)]">From raw boards to finishing hardware, we help you source the right material stack for durable, polished interiors.</p>
+	<div class="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+		@for (item of serviceCards; track item.title) {
+			<article class="section-card p-5">
+				<h3 class="text-xl font-semibold text-[var(--wood-900)]">{{ item.title }}</h3>
+				<p class="mt-2 text-sm text-[var(--muted)]">{{ item.text }}</p>
+			</article>
+		}
+	</div>
+</section>
+
+<section class="container-shell mt-12" id="featured-products" [@fadeInUp]>
+	<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">Featured Products</h2>
+	<p class="mt-2 text-sm text-[var(--muted)]">Popular picks that cover everyday furniture, renovation work, and commercial requirements.</p>
+	<div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" [@staggerCards]>
+		@for (product of featuredProducts; track product.id) {
+			<div class="stagger-item">
+				<app-product-card [product]="product"></app-product-card>
+			</div>
+		}
+	</div>
+</section>
+
+<section class="container-shell mt-12" [@fadeInUp]>
+	<app-testimonials></app-testimonials>
+</section>
+
+<section class="container-shell mt-12" [@fadeInUp]>
+	<div class="section-card p-6 md:p-8">
+		<div class="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+			<div class="max-w-2xl">
+				<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--wood-700)]">How We Work</p>
+				<h2 class="mt-2 text-3xl text-[var(--wood-900)] md:text-4xl">A simple process for quick quotations</h2>
+				<p class="mt-3 text-sm text-[var(--muted)]">Whether you are planning a single wardrobe or a full interior project, our inquiry flow is designed to keep things clear and fast.</p>
+			</div>
+			<a href="https://wa.me/919876543210?text=Hello%2C%20I%20want%20help%20choosing%20the%20right%20materials." target="_blank" rel="noopener noreferrer" class="wood-btn self-start">Ask on WhatsApp</a>
+		</div>
+
+		<div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+			@for (step of workSteps; track step.step) {
+				<article class="step-card p-5">
+					<p class="text-sm font-bold uppercase tracking-[0.2em] text-[var(--wood-700)]">Step {{ step.step }}</p>
+					<h3 class="mt-2 text-xl font-semibold text-[var(--wood-900)]">{{ step.title }}</h3>
+					<p class="mt-2 text-sm text-[var(--muted)]">{{ step.text }}</p>
+				</article>
+			}
+		</div>
+	</div>
+</section>
+
+<section class="container-shell mt-12" [@fadeInUp]>
+	<div class="section-card p-6 md:p-8">
+		<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">Common Project Types We Support</h2>
+		<div class="mt-5 flex flex-wrap gap-3">
+			@for (area of serviceAreas; track area) {
+				<span class="pill-tag">{{ area }}</span>
+			}
+		</div>
+	</div>
+</section>
+
+<section class="container-shell mt-12" [@fadeInUp]>
+	<div class="section-card flex flex-col items-start justify-between gap-5 p-6 md:flex-row md:items-center md:p-8">
+		<div>
+			<h3 class="text-3xl text-[var(--wood-900)]">Need a Bulk Quote for Your Project?</h3>
+			<p class="mt-2 text-[var(--muted)]">Share your requirement and get quick pricing with product guidance.</p>
+		</div>
+		<a
+			href="https://wa.me/919876543210?text=Hello%2C%20I%20need%20a%20bulk%20quote%20for%20plywood%20and%20hardware."
+			target="_blank"
+			rel="noopener noreferrer"
+			class="wood-btn"
+		>
+			Chat on WhatsApp
+		</a>
+	</div>
+</section>

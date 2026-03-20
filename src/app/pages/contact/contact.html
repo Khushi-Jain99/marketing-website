@@ -1,0 +1,57 @@
+<section class="container-shell mt-8" [@fadeInUp]>
+	<h1 class="text-4xl text-[var(--wood-900)] md:text-5xl">Contact Us</h1>
+	<p class="mt-2 text-[var(--muted)]">Share your requirement and our team will reach out quickly.</p>
+
+	<div class="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+		@for (point of contactPoints; track point.label) {
+			<article class="section-card p-5">
+				<p class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--wood-700)]">{{ point.label }}</p>
+				@if (point.href) {
+					<a [href]="point.href" class="mt-2 block text-lg font-semibold text-[var(--wood-900)] hover:underline">{{ point.value }}</a>
+				} @else {
+					<p class="mt-2 text-lg font-semibold text-[var(--wood-900)]">{{ point.value }}</p>
+				}
+			</article>
+		}
+	</div>
+
+	<div class="mt-6 grid gap-6 lg:grid-cols-2">
+		<app-contact-form></app-contact-form>
+
+		<div class="space-y-4">
+			<div class="section-card p-5">
+				<h3 class="text-xl font-semibold text-[var(--wood-900)]">Store Location</h3>
+				<iframe
+					class="mt-3 h-64 w-full rounded-xl border-0"
+					loading="lazy"
+					src="https://www.google.com/maps?q=Ahmedabad%20timber%20market&output=embed"
+					title="Google Maps"
+				></iframe>
+			</div>
+
+			<div class="section-card flex flex-wrap gap-3 p-5">
+				<a href="tel:+919876543210" class="wood-btn">Click to Call</a>
+				<a
+					href="https://wa.me/919876543210?text=Hello%2C%20I%20need%20details%20for%20your%20products."
+					target="_blank"
+					rel="noopener noreferrer"
+					class="outline-btn"
+				>
+					WhatsApp Us
+				</a>
+			</div>
+
+			<div class="section-card p-5">
+				<h3 class="text-xl font-semibold text-[var(--wood-900)]">What to include in your enquiry</h3>
+				<div class="mt-3 space-y-2 text-sm text-[var(--muted)]">
+					@for (tip of enquiryTips; track tip) {
+						<div class="flex gap-2">
+							<span class="font-bold text-[var(--wood-700)]">•</span>
+							<span>{{ tip }}</span>
+						</div>
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

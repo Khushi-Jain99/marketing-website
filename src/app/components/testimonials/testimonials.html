@@ -1,0 +1,12 @@
+<section class="section-card mx-auto max-w-3xl p-6 text-center md:p-10">
+	<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--wood-700)]">Testimonials</p>
+	<p class="mt-5 text-lg leading-relaxed text-[var(--ink)] md:text-xl">
+		"{{ testimonials[current()].text }}"
+	</p>
+	<p class="mt-4 font-semibold text-[var(--wood-800)]">- {{ testimonials[current()].name }}</p>
+
+	<div class="mt-5 flex items-center justify-center gap-3">
+		<button type="button" class="outline-btn" (click)="previous()">Prev</button>
+		<button type="button" class="outline-btn" (click)="next()">Next</button>
+	</div>
+</section>

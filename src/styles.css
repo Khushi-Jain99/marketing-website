@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+:root {
+	--wood-900: #3e2a1f;
+	--wood-800: #5b3b2b;
+	--wood-700: #7a5439;
+	--wood-500: #9a6c48;
+	--sand-200: #f2e8db;
+	--sand-100: #fbf6ef;
+	--cream: #fffdf8;
+	--ink: #2c2521;
+	--muted: #6d6159;
+	--success: #25d366;
+}
+
+html,
+body {
+	scroll-behavior: smooth;
+	background: radial-gradient(circle at 20% 10%, #fffaf0 0%, #f8efdf 42%, #f0dfc8 100%);
+	color: var(--ink);
+	font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+html.dark {
+	--sand-100: #201811;
+	--sand-200: #2b2119;
+	--cream: #2f241c;
+	--ink: #f6efe5;
+	--muted: #cab9a8;
+	background: radial-gradient(circle at 20% 10%, #2a2018 0%, #1f1812 44%, #16110d 100%);
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+	font-family: "Playfair Display", Georgia, serif;
+}
+
+.container-shell {
+	width: min(1120px, calc(100% - 2rem));
+	margin-inline: auto;
+}
+
+.section-card {
+	background: color-mix(in srgb, var(--cream) 88%, transparent);
+	border: 1px solid rgba(154, 108, 72, 0.28);
+	border-radius: 1rem;
+	box-shadow: 0 12px 28px rgba(60, 35, 18, 0.08);
+}
+
+.wood-btn {
+	background: linear-gradient(130deg, var(--wood-700), var(--wood-500));
+	color: #fff;
+	border: none;
+	border-radius: 999px;
+	padding: 0.7rem 1.2rem;
+	font-weight: 700;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.wood-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 20px rgba(91, 59, 43, 0.25);
+}
+
+.outline-btn {
+	background: transparent;
+	color: var(--wood-800);
+	border: 1px solid var(--wood-500);
+	border-radius: 999px;
+	padding: 0.66rem 1.1rem;
+	font-weight: 700;
+}

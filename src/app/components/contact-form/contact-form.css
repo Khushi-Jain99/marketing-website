@@ -1,0 +1,14 @@
+.form-input {
+	width: 100%;
+	border-radius: 0.75rem;
+	border: 1px solid rgba(154, 108, 72, 0.3);
+	background: color-mix(in srgb, var(--cream) 90%, transparent);
+	color: var(--ink);
+	padding: 0.65rem 0.85rem;
+	outline: none;
+}
+
+.form-input:focus {
+	border-color: var(--wood-700);
+	box-shadow: 0 0 0 3px rgba(154, 108, 72, 0.2);
+}

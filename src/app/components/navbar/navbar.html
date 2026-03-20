@@ -1,0 +1,37 @@
+<header class="sticky top-0 z-50 border-b border-[color:color-mix(in_srgb,var(--wood-500)_20%,transparent)] bg-[color:color-mix(in_srgb,var(--sand-100)_85%,transparent)] backdrop-blur-md">
+	<nav class="container-shell flex h-18 items-center justify-between py-2">
+		<a routerLink="/" class="font-display text-xl font-bold tracking-wide text-[var(--wood-900)]">Vardhman Ply Palace</a>
+
+		<button
+			class="outline-btn md:hidden"
+			type="button"
+			(click)="toggleMenu()"
+			aria-label="Open menu"
+		>
+			Menu
+		</button>
+
+		<div class="hidden items-center gap-3 md:flex">
+			<a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">Home</a>
+			<a routerLink="/products" routerLinkActive="active-link" class="nav-link">Products</a>
+			<a routerLink="/about" routerLinkActive="active-link" class="nav-link">About Us</a>
+			<a routerLink="/contact" routerLinkActive="active-link" class="nav-link">Contact</a>
+			<button type="button" class="outline-btn" (click)="themeService.toggleTheme()">
+				{{ themeService.isDark() ? 'Light' : 'Dark' }} Mode
+			</button>
+		</div>
+	</nav>
+
+	@if (isMenuOpen()) {
+		<div class="container-shell space-y-2 pb-4 md:hidden">
+			<a routerLink="/" (click)="closeMenu()" class="mobile-link">Home</a>
+			<a routerLink="/products" (click)="closeMenu()" class="mobile-link">Products</a>
+			<a routerLink="/about" (click)="closeMenu()" class="mobile-link">About Us</a>
+			<a routerLink="/contact" (click)="closeMenu()" class="mobile-link">Contact</a>
+			<button type="button" class="outline-btn w-full" (click)="themeService.toggleTheme()">
+				{{ themeService.isDark() ? 'Switch to Light' : 'Switch to Dark' }}
+			</button>
+			<a routerLink="/contact" (click)="closeMenu()" class="wood-btn block text-center">Get Quote</a>
+		</div>
+	}
+</header>
