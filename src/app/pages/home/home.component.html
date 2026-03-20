@@ -8,6 +8,7 @@
 		<div class="section-card p-5 text-center">
 			<p class="text-3xl font-bold text-[var(--wood-900)]">{{ stat.value }}</p>
 			<p class="mt-1 text-sm font-semibold text-[var(--muted)]">{{ stat.label }}</p>
+			<p class="mt-2 text-xs leading-relaxed text-[var(--muted)]">{{ stat.note }}</p>
 		</div>
 	}
 </section>
@@ -17,11 +18,14 @@
 		<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">Why Choose Us</h2>
 		<p class="max-w-xl text-sm text-[var(--muted)]">We combine quality products with expert support to help you build interiors that last.</p>
 	</div>
-	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" [@staggerCards]>
+	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" [@staggerCards]>
 		@for (item of whyChoose; track item.title) {
-			<article class="section-card stagger-item p-5">
-				<h3 class="text-lg font-semibold text-[var(--wood-800)]">{{ item.title }}</h3>
-				<p class="mt-2 text-sm text-[var(--muted)]">{{ item.text }}</p>
+			<article class="section-card stagger-item why-card p-5">
+				<div class="icon-badge">
+					<span class="material-symbols-outlined" aria-hidden="true">{{ item.icon }}</span>
+				</div>
+				<h3 class="mt-4 text-lg font-semibold text-[var(--wood-800)]">{{ item.title }}</h3>
+				<p class="mt-2 text-sm leading-relaxed text-[var(--muted)]">{{ item.text }}</p>
 			</article>
 		}
 	</div>
@@ -64,7 +68,7 @@
 				<h2 class="mt-2 text-3xl text-[var(--wood-900)] md:text-4xl">A simple process for quick quotations</h2>
 				<p class="mt-3 text-sm text-[var(--muted)]">Whether you are planning a single wardrobe or a full interior project, our inquiry flow is designed to keep things clear and fast.</p>
 			</div>
-			<a href="https://wa.me/919876543210?text=Hello%2C%20I%20want%20help%20choosing%20the%20right%20materials." target="_blank" rel="noopener noreferrer" class="wood-btn self-start">Ask on WhatsApp</a>
+			<a href="https://wa.me/919729421569?text=Hello%2C%20I%20want%20help%20choosing%20the%20right%20materials." target="_blank" rel="noopener noreferrer" class="wood-btn self-start">Ask on WhatsApp</a>
 		</div>
 
 		<div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
@@ -97,7 +101,7 @@
 			<p class="mt-2 text-[var(--muted)]">Share your requirement and get quick pricing with product guidance.</p>
 		</div>
 		<a
-			href="https://wa.me/919876543210?text=Hello%2C%20I%20need%20a%20bulk%20quote%20for%20plywood%20and%20hardware."
+			href="https://wa.me/919729421569?text=Hello%2C%20I%20need%20a%20bulk%20quote%20for%20plywood%20and%20hardware."
 			target="_blank"
 			rel="noopener noreferrer"
 			class="wood-btn"

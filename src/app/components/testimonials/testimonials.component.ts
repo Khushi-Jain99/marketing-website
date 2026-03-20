@@ -3,10 +3,10 @@ import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 @Component({
   selector: 'app-testimonials',
   imports: [],
-  templateUrl: './testimonials.html',
-  styleUrl: './testimonials.scss',
+  templateUrl: './testimonials.component.html',
+  styleUrl: './testimonials.component.scss',
 })
-export class Testimonials implements OnInit, OnDestroy {
+export class TestimonialsComponent implements OnInit, OnDestroy {
   private timerId?: ReturnType<typeof setInterval>;
   current = signal(0);
 

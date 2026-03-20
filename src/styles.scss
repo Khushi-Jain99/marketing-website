@@ -1,4 +1,4 @@
-@use "sass:color";
+@use "tailwindcss";
 
 :root {
   --wood-900: #3e2a1f;
@@ -19,15 +19,6 @@ body {
   background: radial-gradient(circle at 20% 10%, #fffaf0 0%, #f8efdf 42%, #f0dfc8 100%);
   color: var(--ink);
   font-family: "Manrope", "Segoe UI", sans-serif;
-}
-
-html.dark {
-  --sand-100: #201811;
-  --sand-200: #2b2119;
-  --cream: #2f241c;
-  --ink: #f6efe5;
-  --muted: #cab9a8;
-  background: radial-gradient(circle at 20% 10%, #2a2018 0%, #1f1812 44%, #16110d 100%);
 }
 
 body {
@@ -53,6 +44,7 @@ h4,
   border: 1px solid rgba(154, 108, 72, 0.28);
   border-radius: 1rem;
   box-shadow: 0 12px 28px rgba(60, 35, 18, 0.08);
+  color: var(--ink);
 }
 
 .wood-btn {

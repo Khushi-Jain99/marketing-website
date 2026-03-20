@@ -4,10 +4,10 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-hero',
   imports: [RouterLink],
-  templateUrl: './hero.html',
-  styleUrl: './hero.scss',
+  templateUrl: './hero.component.html',
+  styleUrl: './hero.component.scss',
 })
-export class Hero {
+export class HeroComponent {
   @Input() heading = 'Trusted Plywood and Hardware Partner';
   @Input() subheading = 'Strong materials. Honest pricing. On-time delivery.';
 }

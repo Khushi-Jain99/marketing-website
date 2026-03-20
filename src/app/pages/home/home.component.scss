@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+.section-card,
+.step-card {
+  height: 100%;
+}
+
+.why-card {
+  text-align: left;
+}
+
+.icon-badge {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(154, 108, 72, 0.14);
+  color: var(--wood-800);
+}
+
+.material-symbols-outlined {
+  font-size: 1.4rem;
+  line-height: 1;
+}

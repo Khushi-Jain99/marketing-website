@@ -16,9 +16,7 @@
 			<a routerLink="/products" routerLinkActive="active-link" class="nav-link">Products</a>
 			<a routerLink="/about" routerLinkActive="active-link" class="nav-link">About Us</a>
 			<a routerLink="/contact" routerLinkActive="active-link" class="nav-link">Contact</a>
-			<button type="button" class="outline-btn" (click)="themeService.toggleTheme()">
-				{{ themeService.isDark() ? 'Light' : 'Dark' }} Mode
-			</button>
+			<a routerLink="/contact" class="wood-btn">Get Quote</a>
 		</div>
 	</nav>
 
@@ -28,9 +26,6 @@
 			<a routerLink="/products" (click)="closeMenu()" class="mobile-link">Products</a>
 			<a routerLink="/about" (click)="closeMenu()" class="mobile-link">About Us</a>
 			<a routerLink="/contact" (click)="closeMenu()" class="mobile-link">Contact</a>
-			<button type="button" class="outline-btn w-full" (click)="themeService.toggleTheme()">
-				{{ themeService.isDark() ? 'Switch to Light' : 'Switch to Dark' }}
-			</button>
 			<a routerLink="/contact" (click)="closeMenu()" class="wood-btn block text-center">Get Quote</a>
 		</div>
 	}

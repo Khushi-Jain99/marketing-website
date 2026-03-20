@@ -2,20 +2,20 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { ProductCard } from '../../components/product-card/product-card';
+import { ProductCardComponent } from '../../components/product-card/product-card.component';
 import { Product, ProductCategory } from '../../models/product.model';
-import { ProductService } from '../../services/product';
+import { ProductService } from '../../services/product.service';
 import { fadeInUp, staggerCards } from '../../animations/section.animations';
-import { SeoService } from '../../services/seo';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-products',
-  imports: [CommonModule, FormsModule, ProductCard, RouterLink],
-  templateUrl: './products.html',
-  styleUrl: './products.scss',
+  imports: [CommonModule, FormsModule, ProductCardComponent, RouterLink],
+  templateUrl: './products.component.html',
+  styleUrl: './products.component.scss',
   animations: [fadeInUp, staggerCards],
 })
-export class Products implements OnInit {
+export class ProductsComponent implements OnInit {
   products: Product[] = [];
   filteredProducts: Product[] = [];
   search = '';
@@ -53,6 +53,7 @@ export class Products implements OnInit {
 
     this.categories = ['All', ...this.productService.categories];
     this.productService.getProducts().subscribe((products) => {
+      console.debug('[Products] products loaded:', products);
       this.products = products;
       this.applyFilters();
     });
@@ -71,6 +72,10 @@ export class Products implements OnInit {
     const query = this.search.trim().toLowerCase();
 
     this.filteredProducts = this.products.filter((product) => {
+      if (!product) {
+        return false;
+      }
+
       const categoryMatch = this.activeCategory === 'All' || product.category === this.activeCategory;
       const searchMatch =
         !query ||
@@ -80,5 +85,7 @@ export class Products implements OnInit {
 
       return categoryMatch && searchMatch;
     });
+
+    console.debug('[Products] filtered products:', this.filteredProducts.length);
   }
 }

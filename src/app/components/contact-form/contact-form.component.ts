@@ -1,14 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
-import { ContactService } from '../../services/contact';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact-form',
-  imports: [ReactiveFormsModule],
-  templateUrl: './contact-form.html',
-  styleUrl: './contact-form.scss',
+  imports: [CommonModule, ReactiveFormsModule],
+  templateUrl: './contact-form.component.html',
+  styleUrl: './contact-form.component.scss',
 })
-export class ContactForm {
+export class ContactFormComponent {
   private readonly fb = inject(FormBuilder);
   private readonly contactService = inject(ContactService);
 

@@ -1,15 +1,16 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { fadeInUp, staggerCards } from '../../animations/section.animations';
-import { SeoService } from '../../services/seo';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-about',
-  imports: [],
-  templateUrl: './about.html',
-  styleUrl: './about.scss',
+  imports: [CommonModule],
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.scss',
   animations: [fadeInUp, staggerCards],
 })
-export class About implements OnInit {
+export class AboutComponent implements OnInit {
   highlights = [
     { label: 'Years of Experience', value: '18+' },
     { label: 'Projects Served', value: '2,500+' },

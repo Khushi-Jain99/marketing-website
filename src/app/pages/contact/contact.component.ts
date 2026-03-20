@@ -1,23 +1,24 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ContactForm } from '../../components/contact-form/contact-form';
+import { ContactFormComponent } from '../../components/contact-form/contact-form.component';
 import { fadeInUp } from '../../animations/section.animations';
-import { SeoService } from '../../services/seo';
+import { SeoService } from '../../services/seo.service';
 
 @Component({
   selector: 'app-contact',
-  imports: [ContactForm],
-  templateUrl: './contact.html',
-  styleUrl: './contact.scss',
+  imports: [CommonModule, ContactFormComponent],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.scss',
   animations: [fadeInUp],
 })
-export class Contact implements OnInit {
+export class ContactComponent implements OnInit {
   constructor(private readonly seo: SeoService) {}
 
   contactPoints = [
-    { label: 'Phone', value: '+91 98765 43210', href: 'tel:+919876543210' },
-    { label: 'WhatsApp', value: 'Chat instantly for quotes', href: 'https://wa.me/919876543210?text=Hello%2C%20I%20need%20a%20quotation.' },
+    { label: 'Phone', value: '+91 97294 21569', href: 'tel:+919729421569' },
+    { label: 'WhatsApp', value: 'Chat instantly for quotes', href: 'https://wa.me/919729421569?text=Hello%2C%20I%20need%20a%20quotation.' },
     { label: 'Email', value: 'vardhman@example.com', href: 'mailto:vardhman@example.com' },
-    { label: 'Store hours', value: 'Mon-Sat, 9:00 AM to 8:00 PM', href: null },
+    { label: 'Store hours', value: 'Mon-Sat: 9:00 AM - 8:00 PM, Sun: 9:00 AM - 3:00 PM.', href: null },
   ];
 
   enquiryTips = [
