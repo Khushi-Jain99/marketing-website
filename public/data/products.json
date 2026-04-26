@@ -1,24 +1,17 @@
 [
   {
-    "id": 1,
-    "name": "Marine Grade Plywood",
-    "description": "Moisture-resistant premium plywood ideal for kitchens and long-life furniture.",
-    "category": "Plywood",
-    "image": "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=900&q=80"
-  },
-  {
     "id": 2,
     "name": "Commercial Plywood",
     "description": "Budget-friendly strong sheets for wardrobes, cabinets, and office partitions.",
     "category": "Plywood",
-    "image": "https://images.unsplash.com/photo-1571844307880-751c6d86f3f3?auto=format&fit=crop&w=900&q=80"
+    "image": "https://images.unsplash.com/photo-1510123512964-b088ed8430b2?auto=format&fit=crop&w=1200&q=80"
   },
   {
     "id": 3,
     "name": "Walnut Texture Laminate",
     "description": "Scratch-resistant decorative finish that gives furniture a rich wood look.",
     "category": "Laminates",
-    "image": "https://images.unsplash.com/photo-1616627456394-650f03f4c36d?auto=format&fit=crop&w=900&q=80"
+    "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80"
   },
   {
     "id": 4,
@@ -67,7 +60,7 @@
     "name": "Acrylic Gloss Laminate",
     "description": "High-shine surface finish for premium wardrobes and modern kitchen shutters.",
     "category": "Laminates",
-    "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80"
+    "image": "https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?auto=format&fit=crop&w=900&q=80"
   },
   {
     "id": 11,
@@ -81,6 +74,62 @@
     "name": "Soft Close Hinges",
     "description": "Premium hinges with smooth closing action for cabinets and wardrobes.",
     "category": "Hardware",
-    "image": "https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=900&q=80"
+    "image": "https://images.unsplash.com/photo-1565553642973-6afe791aee33?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 13,
+    "name": "Teak Veneer Plywood",
+    "description": "Decorative plywood with natural teak wood finish for premium aesthetics.",
+    "category": "Plywood",
+    "image": "https://images.unsplash.com/photo-1610557892470-55d9e80e0b9b?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 14,
+    "name": "High Pressure Laminate",
+    "description": "Ultra-durable HPL sheets for exterior claddings and heavy-use counters.",
+    "category": "Laminates",
+    "image": "https://images.unsplash.com/photo-1615873968403-89e068629275?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 15,
+    "name": "Pre-laminated Particle Board",
+    "description": "Ready-to-use boards with factory-pressed laminate for quick furniture assembly.",
+    "category": "Boards",
+    "image": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 16,
+    "name": "Designer Cabinet Handles",
+    "description": "Contemporary handles in various finishes to enhance your furniture looks.",
+    "category": "Hardware",
+    "image": "https://images.unsplash.com/photo-1544457070-4cd773b4d71e?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 17,
+    "name": "Flexible Plywood",
+    "description": "Special grade plywood that can be bent into curved shapes for creative designs.",
+    "category": "Plywood",
+    "image": "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 18,
+    "name": "Textured PVC Laminate",
+    "description": "100% waterproof and termite-proof laminates ideal for bathroom cabinets.",
+    "category": "Laminates",
+    "image": "https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 19,
+    "name": "Plywood Core Flush Door",
+    "description": "Solid core flush doors for main entrances and internal rooms.",
+    "category": "Boards",
+    "image": "https://images.unsplash.com/photo-1506377295352-e3154d43ea9e?auto=format&fit=crop&w=900&q=80"
+  },
+  {
+    "id": 20,
+    "name": "Magnetic Cabinet Catches",
+    "description": "Heavy-duty magnetic catches for secure closure of large cabinet doors.",
+    "category": "Hardware",
+    "image": "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?auto=format&fit=crop&w=900&q=80"
   }
 ]

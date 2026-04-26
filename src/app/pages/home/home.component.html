@@ -1,57 +1,121 @@
-<app-hero
-	heading="Built for Strength, Finished with Style"
-	subheading="Your one-stop destination for premium plywood, laminates, boards, and hardware."
-></app-hero>
+<app-hero heading="Built for Strength, Finished with Style"
+	subheading="Your one-stop destination for premium plywood, laminates, boards, and hardware."></app-hero>
 
 <section class="container-shell mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" [@fadeInUp]>
 	@for (stat of stats; track stat.label) {
-		<div class="section-card p-5 text-center">
-			<p class="text-3xl font-bold text-[var(--wood-900)]">{{ stat.value }}</p>
-			<p class="mt-1 text-sm font-semibold text-[var(--muted)]">{{ stat.label }}</p>
-			<p class="mt-2 text-xs leading-relaxed text-[var(--muted)]">{{ stat.note }}</p>
-		</div>
+	<div class="section-card p-5 text-center">
+		<p class="text-3xl font-bold text-[var(--wood-900)]">{{ stat.value }}</p>
+		<p class="mt-1 text-sm font-semibold text-[var(--muted)]">{{ stat.label }}</p>
+		<p class="mt-2 text-xs leading-relaxed text-[var(--muted)]">{{ stat.note }}</p>
+	</div>
 	}
+</section>
+
+<!-- New: Quality Excellence Section -->
+<section class="container-shell mt-12 overflow-hidden rounded-2xl bg-[var(--wood-900)] text-white" [@fadeInUp]>
+	<div class="flex flex-col lg:flex-row">
+		<div class="relative min-h-[300px] flex-1">
+			<img src="/images/wood_grain_macro.png" alt="Macro plywood texture"
+				class="absolute inset-0 h-full w-full object-cover opacity-80" />
+			<div
+				class="absolute inset-0 bg-gradient-to-r from-[var(--wood-900)] via-transparent to-transparent lg:hidden">
+			</div>
+		</div>
+		<div class="flex-1 p-8 md:p-12">
+			<p class="text-sm font-semibold uppercase tracking-[0.2em] text-amber-200">The Science of Strength</p>
+			<h2 class="mt-4 text-3xl font-bold md:text-5xl">Engineered for Perfection</h2>
+			<p class="mt-6 text-lg leading-relaxed text-amber-50/80">
+				Our plywood isn't just wood; it's a result of precision engineering. Every sheet at Vardhman Ply Palace
+				undergoes rigorous testing for moisture resistance, structural integrity, and grain alignment.
+			</p>
+			<div class="mt-8 grid gap-6 sm:grid-cols-2">
+				<div>
+					<h4 class="font-bold text-amber-200">Precision Layers</h4>
+					<p class="mt-1 text-sm text-amber-50/60">Cross-banded veneers for zero-warpage durability.</p>
+				</div>
+				<div>
+					<h4 class="font-bold text-amber-200">Glue Line Protection</h4>
+					<p class="mt-1 text-sm text-amber-50/60">Advanced bonding technology for borer and termite
+						resistance.</p>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 
 <section class="container-shell mt-12" [@fadeInUp]>
 	<div class="mb-5 flex items-end justify-between gap-4">
 		<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">Why Choose Us</h2>
-		<p class="max-w-xl text-sm text-[var(--muted)]">We combine quality products with expert support to help you build interiors that last.</p>
+		<p class="max-w-xl text-sm text-[var(--muted)]">We combine quality products with expert support to help you
+			build interiors that last.</p>
 	</div>
 	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" [@staggerCards]>
 		@for (item of whyChoose; track item.title) {
-			<article class="section-card stagger-item why-card p-5">
-				<div class="icon-badge">
-					<span class="material-symbols-outlined" aria-hidden="true">{{ item.icon }}</span>
-				</div>
-				<h3 class="mt-4 text-lg font-semibold text-[var(--wood-800)]">{{ item.title }}</h3>
-				<p class="mt-2 text-sm leading-relaxed text-[var(--muted)]">{{ item.text }}</p>
-			</article>
+		<article class="section-card stagger-item why-card p-5">
+			<div class="icon-badge">
+				<span class="material-symbols-outlined" aria-hidden="true">{{ item.icon }}</span>
+			</div>
+			<h3 class="mt-4 text-lg font-semibold text-[var(--wood-800)]">{{ item.title }}</h3>
+			<p class="mt-2 text-sm leading-relaxed text-[var(--muted)]">{{ item.text }}</p>
+		</article>
 		}
 	</div>
 </section>
 
 <section class="container-shell mt-12" [@fadeInUp]>
 	<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">What We Supply</h2>
-	<p class="mt-2 max-w-3xl text-sm text-[var(--muted)]">From raw boards to finishing hardware, we help you source the right material stack for durable, polished interiors.</p>
+	<p class="mt-2 max-w-3xl text-sm text-[var(--muted)]">From raw boards to finishing hardware, we help you source the
+		right material stack for durable, polished interiors.</p>
 	<div class="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 		@for (item of serviceCards; track item.title) {
-			<article class="section-card p-5">
-				<h3 class="text-xl font-semibold text-[var(--wood-900)]">{{ item.title }}</h3>
-				<p class="mt-2 text-sm text-[var(--muted)]">{{ item.text }}</p>
-			</article>
+		<article class="section-card group relative overflow-hidden p-0">
+			<div class="relative h-48 overflow-hidden">
+				<img [src]="item.image" [alt]="item.title"
+					class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+				<div class="absolute inset-0 bg-gradient-to-t from-[var(--wood-900)]/80 to-transparent"></div>
+				<h3 class="absolute bottom-4 left-4 text-xl font-semibold text-white">{{ item.title }}</h3>
+			</div>
+			<div class="p-5">
+				<p class="text-sm text-[var(--muted)]">{{ item.text }}</p>
+			</div>
+		</article>
 		}
+	</div>
+</section>
+
+<!-- New: Brand Scale & Trust Section -->
+<section class="container-shell mt-12" [@fadeInUp]>
+	<div class="grid gap-4 md:grid-cols-2">
+		<div class="section-card overflow-hidden p-0">
+			<img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
+				alt="Vardhman Warehouse" class="h-64 w-full object-cover" />
+			<div class="p-6">
+				<h3 class="text-2xl font-bold text-[var(--wood-900)]">Massive Inventory</h3>
+				<p class="mt-2 text-[var(--muted)]">Our state-of-the-art warehouse maintains ready-to-dispatch stock of
+					400+ product variants to keep your projects moving without delays.</p>
+			</div>
+		</div>
+		<div class="section-card overflow-hidden p-0">
+			<img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80"
+				alt="Quality Process" class="h-64 w-full object-cover" />
+			<div class="p-6">
+				<h3 class="text-2xl font-bold text-[var(--wood-900)]">Direct Factory Sourcing</h3>
+				<p class="mt-2 text-[var(--muted)]">We partner directly with top-tier manufacturers to ensure every
+					sheet meets the highest industrial standards of quality and durability.</p>
+			</div>
+		</div>
 	</div>
 </section>
 
 <section class="container-shell mt-12" id="featured-products" [@fadeInUp]>
 	<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">Featured Products</h2>
-	<p class="mt-2 text-sm text-[var(--muted)]">Popular picks that cover everyday furniture, renovation work, and commercial requirements.</p>
+	<p class="mt-2 text-sm text-[var(--muted)]">Popular picks that cover everyday furniture, renovation work, and
+		commercial requirements.</p>
 	<div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" [@staggerCards]>
 		@for (product of featuredProducts; track product.id) {
-			<div class="stagger-item">
-				<app-product-card [product]="product"></app-product-card>
-			</div>
+		<div class="stagger-item">
+			<app-product-card [product]="product"></app-product-card>
+		</div>
 		}
 	</div>
 </section>
@@ -66,18 +130,20 @@
 			<div class="max-w-2xl">
 				<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--wood-700)]">How We Work</p>
 				<h2 class="mt-2 text-3xl text-[var(--wood-900)] md:text-4xl">A simple process for quick quotations</h2>
-				<p class="mt-3 text-sm text-[var(--muted)]">Whether you are planning a single wardrobe or a full interior project, our inquiry flow is designed to keep things clear and fast.</p>
+				<p class="mt-3 text-sm text-[var(--muted)]">Whether you are planning a single wardrobe or a full
+					interior project, our inquiry flow is designed to keep things clear and fast.</p>
 			</div>
-			<a href="https://wa.me/919729421569?text=Hello%2C%20I%20want%20help%20choosing%20the%20right%20materials." target="_blank" rel="noopener noreferrer" class="wood-btn self-start">Ask on WhatsApp</a>
+			<a href="https://wa.me/919729421569?text=Hello%2C%20I%20want%20help%20choosing%20the%20right%20materials."
+				target="_blank" rel="noopener noreferrer" class="wood-btn self-start">Ask on WhatsApp</a>
 		</div>
 
 		<div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
 			@for (step of workSteps; track step.step) {
-				<article class="step-card p-5">
-					<p class="text-sm font-bold uppercase tracking-[0.2em] text-[var(--wood-700)]">Step {{ step.step }}</p>
-					<h3 class="mt-2 text-xl font-semibold text-[var(--wood-900)]">{{ step.title }}</h3>
-					<p class="mt-2 text-sm text-[var(--muted)]">{{ step.text }}</p>
-				</article>
+			<article class="step-card p-5">
+				<p class="text-sm font-bold uppercase tracking-[0.2em] text-[var(--wood-700)]">Step {{ step.step }}</p>
+				<h3 class="mt-2 text-xl font-semibold text-[var(--wood-900)]">{{ step.title }}</h3>
+				<p class="mt-2 text-sm text-[var(--muted)]">{{ step.text }}</p>
+			</article>
 			}
 		</div>
 	</div>
@@ -88,7 +154,7 @@
 		<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">Common Project Types We Support</h2>
 		<div class="mt-5 flex flex-wrap gap-3">
 			@for (area of serviceAreas; track area) {
-				<span class="pill-tag">{{ area }}</span>
+			<span class="pill-tag">{{ area }}</span>
 			}
 		</div>
 	</div>
@@ -100,13 +166,59 @@
 			<h3 class="text-3xl text-[var(--wood-900)]">Need a Bulk Quote for Your Project?</h3>
 			<p class="mt-2 text-[var(--muted)]">Share your requirement and get quick pricing with product guidance.</p>
 		</div>
-		<a
-			href="https://wa.me/919729421569?text=Hello%2C%20I%20need%20a%20bulk%20quote%20for%20plywood%20and%20hardware."
-			target="_blank"
-			rel="noopener noreferrer"
-			class="wood-btn"
-		>
+		<a href="https://wa.me/919729421569?text=Hello%2C%20I%20need%20a%20bulk%20quote%20for%20plywood%20and%20hardware."
+			target="_blank" rel="noopener noreferrer" class="wood-btn">
 			Chat on WhatsApp
 		</a>
+	</div>
+</section>
+
+<!-- New: Inspiration Gallery -->
+<section class="container-shell mt-12 mb-16" [@fadeInUp]>
+	<div class="mb-6">
+		<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">From Material to Masterpiece</h2>
+		<p class="mt-2 text-sm text-[var(--muted)]">See how our premium range transforms spaces into high-end interiors.
+		</p>
+	</div>
+	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+		<div class="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+			<img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1200&q=80"
+				alt="Modern Kitchen"
+				class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+			<div
+				class="absolute inset-0 bg-gradient-to-t from-[var(--wood-900)]/90 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+			</div>
+			<div
+				class="absolute bottom-6 left-6 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+				<p class="text-sm font-bold uppercase tracking-widest text-amber-200">Application</p>
+				<h4 class="mt-1 text-2xl font-bold text-white">Modular Kitchens</h4>
+			</div>
+		</div>
+		<div class="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+			<img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80"
+				alt="Luxury Wardrobe"
+				class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+			<div
+				class="absolute inset-0 bg-gradient-to-t from-[var(--wood-900)]/90 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+			</div>
+			<div
+				class="absolute bottom-6 left-6 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+				<p class="text-sm font-bold uppercase tracking-widest text-amber-200">Application</p>
+				<h4 class="mt-1 text-2xl font-bold text-white">Luxury Wardrobes</h4>
+			</div>
+		</div>
+		<div class="group relative aspect-[4/5] overflow-hidden rounded-xl shadow-lg">
+			<img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+				alt="Office Interiors"
+				class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+			<div
+				class="absolute inset-0 bg-gradient-to-t from-[var(--wood-900)]/90 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+			</div>
+			<div
+				class="absolute bottom-6 left-6 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+				<p class="text-sm font-bold uppercase tracking-widest text-amber-200">Application</p>
+				<h4 class="mt-1 text-2xl font-bold text-white">Professional Offices</h4>
+			</div>
+		</div>
 	</div>
 </section>
