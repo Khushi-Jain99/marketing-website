@@ -2,16 +2,17 @@
 	<h1 class="text-4xl text-[var(--wood-900)] md:text-5xl">Contact Us</h1>
 	<p class="mt-2 text-[var(--muted)]">Share your requirement and our team will reach out quickly.</p>
 
-	<div class="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+	<div class="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4" [@staggerCards]>
 		@for (point of contactPoints; track point.label) {
-			<article class="section-card p-5">
-				<p class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--wood-700)]">{{ point.label }}</p>
-				@if (point.href) {
-					<a [href]="point.href" class="mt-2 block text-lg font-semibold text-[var(--wood-900)] hover:underline">{{ point.value }}</a>
-				} @else {
-					<p class="mt-2 text-lg font-semibold text-[var(--wood-900)]">{{ point.value }}</p>
-				}
-			</article>
+		<article class="section-card stagger-item p-5">
+			<p class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--wood-700)]">{{ point.label }}</p>
+			@if (point.href) {
+			<a [href]="point.href" class="mt-2 block text-lg font-semibold text-[var(--wood-900)] hover:underline">{{
+				point.value }}</a>
+			} @else {
+			<p class="mt-2 text-lg font-semibold text-[var(--wood-900)]">{{ point.value }}</p>
+			}
+		</article>
 		}
 	</div>
 
@@ -21,22 +22,15 @@
 		<div class="space-y-4">
 			<div class="section-card p-5">
 				<h3 class="text-xl font-semibold text-[var(--wood-900)]">Store Location</h3>
-				<iframe
-					class="mt-3 h-64 w-full rounded-xl border-0"
-					loading="lazy"
+				<iframe class="mt-3 h-64 w-full rounded-xl border-0" loading="lazy"
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.080898129842!2d76.96207632970807!3d29.396026718089065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ddbb4cf85e59b%3A0xa936e0e015a86f5f!2sVardhman%20Ply%20Palace!5e0!3m2!1sen!2sin!4v1774024864200!5m2!1sen!2sin"
-					title="Google Maps"
-				></iframe>
+					title="Google Maps"></iframe>
 			</div>
 
 			<div class="section-card flex flex-wrap gap-3 p-5">
-				<a href="tel:+919729421569" class="wood-btn">Click to Call</a>
-				<a
-					href="https://wa.me/919729421569?text=Hello%2C%20I%20need%20details%20for%20your%20products."
-					target="_blank"
-					rel="noopener noreferrer"
-					class="outline-btn"
-				>
+				<a href="tel:+9197294xxxxx" class="wood-btn">Click to Call</a>
+				<a href="https://wa.me/9197294xxxxx?text=Hello%2C%20I%20need%20details%20for%20your%20products."
+					target="_blank" rel="noopener noreferrer" class="outline-btn">
 					WhatsApp Us
 				</a>
 			</div>
@@ -45,10 +39,10 @@
 				<h3 class="text-xl font-semibold text-[var(--wood-900)]">What to include in your enquiry</h3>
 				<div class="mt-3 space-y-2 text-sm text-[var(--muted)]">
 					@for (tip of enquiryTips; track tip) {
-						<div class="flex gap-2">
-							<span class="font-bold text-[var(--wood-700)]">•</span>
-							<span>{{ tip }}</span>
-						</div>
+					<div class="flex gap-2">
+						<span class="font-bold text-[var(--wood-700)]">•</span>
+						<span>{{ tip }}</span>
+					</div>
 					}
 				</div>
 			</div>

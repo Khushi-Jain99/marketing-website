@@ -12,11 +12,11 @@ import { SeoService } from '../../services/seo.service';
   animations: [fadeInUp],
 })
 export class ContactComponent implements OnInit {
-  constructor(private readonly seo: SeoService) {}
+  constructor(private readonly seo: SeoService) { }
 
   contactPoints = [
-    { label: 'Phone', value: '+91 97294 21569', href: 'tel:+919729421569' },
-    { label: 'WhatsApp', value: 'Chat instantly for quotes', href: 'https://wa.me/919729421569?text=Hello%2C%20I%20need%20a%20quotation.' },
+    { label: 'Phone', value: '+91 97294 xxxxx', href: 'tel:+9197294xxxxx' },
+    { label: 'WhatsApp', value: 'Chat instantly for quotes', href: 'https://wa.me/9197294xxxxx?text=Hello%2C%20I%20need%20a%20quotation.' },
     { label: 'Email', value: 'vardhman@example.com', href: 'mailto:vardhman@example.com' },
     { label: 'Store hours', value: 'Mon-Sat: 9:00 AM - 8:00 PM, Sun: 9:00 AM - 3:00 PM.', href: null },
   ];

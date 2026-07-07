@@ -9,6 +9,7 @@ import { Product } from '../../models/product.model';
 })
 export class ProductCardComponent implements OnChanges {
   @Input({ required: true }) product!: Product;
+  @Input() showImage = true;
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['product']) {
@@ -19,6 +20,6 @@ export class ProductCardComponent implements OnChanges {
   get enquiryLink(): string {
     const productName = this.product?.name ?? 'your product';
     const text = `Hello, I want details for ${productName}.`;
-    return `https://wa.me/919729421569?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/9197294xxxxx?text=${encodeURIComponent(text)}`;
   }
 }

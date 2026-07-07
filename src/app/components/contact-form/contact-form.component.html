@@ -13,11 +13,13 @@
 
 	<label class="block text-sm font-semibold text-[var(--wood-800)]">
 		Message
-		<textarea formControlName="message" rows="4" class="form-input mt-1" placeholder="Tell us what you need"></textarea>
+		<textarea formControlName="message" rows="4" class="form-input mt-1"
+			placeholder="Tell us what you need"></textarea>
 	</label>
 
-	<button type="submit" class="wood-btn" [disabled]="loading">{{ loading ? 'Submitting...' : 'Submit Inquiry' }}</button>
+	<button type="submit" class="wood-btn" [disabled]="loading">{{ loading ? 'Submitting...' : 'Submit Inquiry'
+		}}</button>
 	@if (status) {
-		<p class="text-sm font-semibold text-green-700">{{ status }}</p>
+	<p class="text-sm font-semibold text-green-700">{{ status }}</p>
 	}
 </form>

@@ -2,60 +2,58 @@
 	<h1 class="text-4xl text-[var(--wood-900)] md:text-5xl">Our Products</h1>
 	<p class="mt-2 text-[var(--muted)]">Find the right material quickly using category filters and search.</p>
 
-	<div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+	<div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4" [@staggerCards]>
 		@for (item of categoryHighlights; track item.title) {
-			<article class="section-card p-5">
-				<h2 class="text-xl font-semibold text-[var(--wood-900)]">{{ item.title }}</h2>
-				<p class="mt-2 text-sm text-[var(--muted)]">{{ item.text }}</p>
-			</article>
+		<article class="section-card stagger-item p-5">
+			<h2 class="text-xl font-semibold text-[var(--wood-900)]">{{ item.title }}</h2>
+			<p class="mt-2 text-sm text-[var(--muted)]">{{ item.text }}</p>
+		</article>
 		}
 	</div>
 
 	<div class="section-card mt-6 space-y-4 p-5 md:p-6">
 		<div class="flex flex-wrap gap-2">
 			@for (category of categories; track category) {
-				<button
-					type="button"
-					class="rounded-full px-4 py-2 text-sm font-semibold transition"
-					[class]="activeCategory === category ? 'bg-[var(--wood-700)] text-white' : 'bg-[color:color-mix(in_srgb,var(--wood-500)_14%,transparent)] text-[var(--wood-800)]'"
-					(click)="setCategory(category)"
-				>
-					{{ category }}
-				</button>
+			<button type="button" class="rounded-full px-4 py-2 text-sm font-semibold transition"
+				[class]="activeCategory === category ? 'bg-[var(--wood-700)] text-white' : 'bg-[color:color-mix(in_srgb,var(--wood-500)_14%,transparent)] text-[var(--wood-800)]'"
+				(click)="setCategory(category)">
+				{{ category }}
+			</button>
 			}
 		</div>
 
-		<input
-			[(ngModel)]="search"
-			(input)="applyFilters()"
+		<input [(ngModel)]="search" (input)="applyFilters()"
 			placeholder="Search by product name, category, or description"
-			class="w-full rounded-xl border border-[color:color-mix(in_srgb,var(--wood-500)_20%,transparent)] bg-[color:color-mix(in_srgb,var(--cream)_90%,transparent)] p-3 outline-none"
-		/>
+			class="w-full rounded-xl border border-[color:color-mix(in_srgb,var(--wood-500)_20%,transparent)] bg-[color:color-mix(in_srgb,var(--cream)_90%,transparent)] p-3 outline-none" />
 
 		<div class="flex flex-wrap items-center justify-between gap-3 text-sm text-[var(--muted)]">
 			<p>Showing {{ resultCount }} products</p>
-			<a href="https://wa.me/919729421569?text=Hello%2C%20I%20need%20help%20choosing%20a%20product." target="_blank" rel="noopener noreferrer" class="outline-btn">Need help choosing?</a>
+			<a href="https://wa.me/9197294xxxxx?text=Hello%2C%20I%20need%20help%20choosing%20a%20product."
+				target="_blank" rel="noopener noreferrer" class="outline-btn">Need help choosing?</a>
 		</div>
 	</div>
 
+	@if (filteredProducts.length) {
 	<div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3" [@staggerCards]>
 		@for (product of filteredProducts; track product.id) {
-			<div class="stagger-item">
-				<app-product-card [product]="product"></app-product-card>
-			</div>
+		<div class="stagger-item">
+			<app-product-card [product]="product"></app-product-card>
+		</div>
 		}
 	</div>
+	}
 
 	@if (!filteredProducts.length) {
-		<p class="mt-6 text-center font-semibold text-[var(--muted)]">No products matched your search.</p>
+	<p class="mt-6 text-center font-semibold text-[var(--muted)]">No products matched your search.</p>
 	}
 
 	<section class="section-card mt-12 p-6 md:p-8">
 		<h2 class="text-3xl text-[var(--wood-900)]">Need a tailored recommendation?</h2>
-		<p class="mt-2 max-w-3xl text-sm text-[var(--muted)]">Tell us your project type, budget, and finish preference. We will help you shortlist the best grade and accessories for the job.</p>
+		<p class="mt-2 max-w-3xl text-sm text-[var(--muted)]">Tell us your project type, budget, and finish preference.
+			We will help you shortlist the best grade and accessories for the job.</p>
 		<div class="mt-5 flex flex-wrap gap-3">
 			<a routerLink="/contact" class="wood-btn">Get a Quote</a>
-			<a href="tel:+919729421569" class="outline-btn">Call Our Team</a>
+			<a href="tel:+9197294xxxxx" class="outline-btn">Call Our Team</a>
 		</div>
 	</section>
 </section>

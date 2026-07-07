@@ -23,6 +23,6 @@ export class ProductService {
   }
 
   getFeaturedProducts(): Observable<Product[]> {
-    return this.getProducts().pipe(map((products) => products.slice(0, 6)));
+    return this.getProducts().pipe(map((products) => products.slice(0, 8)));
   }
 }

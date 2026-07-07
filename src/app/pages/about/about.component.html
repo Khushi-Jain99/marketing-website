@@ -1,19 +1,26 @@
 <section class="container-shell mt-8" [@fadeInUp]>
-	<h1 class="text-4xl text-[var(--wood-900)] md:text-5xl">About Our Business</h1>
+	<!-- Hero Heading Section -->
+	<h1 class="text-4xl text-[var(--wood-900)] md:text-5xl">About Vardhman Ply Palace</h1>
 	<p class="mt-3 max-w-3xl text-[var(--muted)]">
-		Vardhman Ply Palace is a trusted partner for carpenters, interior designers, contractors, and homeowners.
-		We provide premium plywood, laminates, boards, and fittings with honest recommendations and dependable service.
+		Established in Panipat, Haryana, Vardhman Ply Palace is a trusted supplier of premium plywood, structural
+		boards,
+		designer laminates, and cabinet fittings. We work directly with carpenters, interior designers, contractors,
+		and homeowners to deliver high-durability building materials backed by expert sizing advice and dependable
+		logistics.
 	</p>
 
-	<div class="mt-7 grid gap-4 md:grid-cols-3" [@staggerCards]>
+	<!-- Highlights Cards (4 columns) -->
+	<div class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" [@staggerCards]>
 		@for (item of highlights; track item.label) {
-		<article class="section-card stagger-item p-5 text-center">
+		<article
+			class="section-card stagger-item p-5 text-center transition duration-300 hover:-translate-y-1 hover:shadow-lg">
 			<p class="text-3xl font-bold text-[var(--wood-800)]">{{ item.value }}</p>
 			<p class="mt-2 text-sm font-semibold text-[var(--muted)]">{{ item.label }}</p>
 		</article>
 		}
 	</div>
 
+	<!-- Who We Serve Tag Cloud -->
 	<div class="section-card mt-8 p-6 md:p-8" [@fadeInUp]>
 		<p class="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--wood-700)]">Who We Serve</p>
 		<div class="mt-4 flex flex-wrap gap-3">
@@ -23,22 +30,23 @@
 		</div>
 	</div>
 
+	<!-- Dual Pillar Focus: Scale and Quality (Side by Side cards) -->
 	<div class="mt-12 grid gap-6 md:grid-cols-2" [@fadeInUp]>
-		<div class="group relative overflow-hidden rounded-2xl shadow-xl">
-			<img src="data:image/jpeg;base64,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"
-				alt="Massive Plywood Warehouse"
+		<div class="group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl">
+			<img src="https://images.unsplash.com/photo-1706027554829-50c444350e43?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2FyZWhvdXNlJTIwb2YlMjB3b29kc3xlbnwwfHwwfHx8MA%3D%3D"
+				alt="Vardhman Plywood Warehouse Scale"
 				class="h-[400px] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
 			<div
 				class="absolute inset-0 bg-gradient-to-t from-[var(--wood-900)]/90 via-[var(--wood-900)]/20 to-transparent">
 			</div>
 			<div class="absolute bottom-8 left-8 right-8">
-				<h3 class="text-2xl font-bold text-white">Scale & Inventory</h3>
-				<p class="mt-2 text-amber-50/80">With over 400+ product variants in stock, our massive warehouse
-					facility ensures that we can handle projects of any scale without delay.</p>
+				<h3 class="text-2xl font-bold text-white">Scale & Catalog</h3>
+				<p class="mt-2 text-amber-50/80">With over 400+ product variants stocked across our dry storage yard, we
+					sustain immediate delivery capacities for all commercial and luxury residential projects.</p>
 			</div>
 		</div>
-		<div class="group relative overflow-hidden rounded-2xl shadow-xl">
-			<img src="https://images.unsplash.com/photo-1520612643265-7576230f278d?auto=format&fit=crop&w=1200&q=80"
+		<div class="group relative overflow-hidden rounded-2xl shadow-xl transition-all duration-300 hover:shadow-2xl">
+			<img src="https://images.unsplash.com/photo-1739863306341-1737ff4614b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fFF1YWxpdHklMjBDb250cm9sJTIwUHJvY2VzcyUyMG9mJTIwd29vZHMlMjBhbmQlMjBsYW1pbmF0ZXxlbnwwfHwwfHx8MA%3D%3D"
 				alt="Quality Control Process"
 				class="h-[400px] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
 			<div
@@ -46,41 +54,94 @@
 			</div>
 			<div class="absolute bottom-8 left-8 right-8">
 				<h3 class="text-2xl font-bold text-white">Quality Assurance</h3>
-				<p class="mt-2 text-amber-50/80">Every batch is inspected for grain quality, structural integrity, and
-					finish perfection before it reaches your site.</p>
+				<p class="mt-2 text-amber-50/80">Every sheet undergoes high-precision thickness calibration, core gap
+					inspection, and moisture-compliance checking before dispatching to site teams.</p>
 			</div>
 		</div>
 	</div>
 
-	<div class="section-card mt-8 grid gap-5 p-6 md:grid-cols-2" [@fadeInUp]>
-		<div>
-			<h2 class="text-2xl text-[var(--wood-900)]">Our Mission</h2>
-			<p class="mt-2 text-[var(--muted)]">
-				To make premium quality materials accessible with transparent pricing, practical guidance, and strong
-				after-sales support.
-			</p>
-		</div>
-		<div>
-			<h2 class="text-2xl text-[var(--wood-900)]">Our Values</h2>
-			<ul class="mt-2 list-disc space-y-1 pl-5 text-[var(--muted)]">
-				<li>Quality first in every product category</li>
-				<li>Customer-focused recommendations</li>
-				<li>Long-term relationships over one-time sales</li>
-				<li>Consistent support for renovation and bulk projects</li>
-			</ul>
-		</div>
-	</div>
+	<!-- Vardhman IS:710 Standards checklist -->
+	<section class="mt-12" [@fadeInUp]>
+		<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">Our Material Standards</h2>
+		<p class="mt-2 text-sm text-[var(--muted)]">We prioritize structural life and safety. Every product in our
+			inventory is categorized under international certification criteria.</p>
 
-	<section class="mt-8" [@fadeInUp]>
-		<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">Our Journey</h2>
-		<div class="mt-5 grid gap-4">
-			@for (item of timeline; track item.year) {
-			<article class="timeline-item section-card p-5">
-				<p class="text-sm font-bold text-[var(--wood-700)]">{{ item.year }}</p>
-				<h3 class="mt-1 text-xl font-semibold text-[var(--wood-900)]">{{ item.title }}</h3>
-				<p class="mt-2 text-sm text-[var(--muted)]">{{ item.text }}</p>
+		<div class="mt-6 grid gap-4 md:grid-cols-3" [@staggerCards]>
+			@for (standard of standards; track standard.title) {
+			<article
+				class="section-card stagger-item p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+				<div class="flex items-center gap-2">
+					<span
+						class="flex h-6 w-6 items-center justify-center rounded-full bg-[var(--wood-700)] text-white text-xs">✓</span>
+					<h3 class="font-display text-lg font-bold text-[var(--wood-900)]">{{ standard.title }}</h3>
+				</div>
+				<p class="mt-3 text-sm leading-relaxed text-[var(--muted)]">{{ standard.desc }}</p>
 			</article>
 			}
 		</div>
 	</section>
+
+	<!-- Logistics & Carpenter Support Infrastructure Section -->
+	<section class="mt-12" [@fadeInUp]>
+		<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">Infrastructure & Capabilities</h2>
+		<p class="mt-2 text-sm text-[var(--muted)]">How we help carpenters, designers, and site teams fast-track
+			execution without delays.</p>
+
+		<div class="mt-6 grid gap-6 md:grid-cols-3" [@staggerCards]>
+			@for (infra of infrastructure; track infra.title) {
+			<article
+				class="section-card stagger-item p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+				<div>
+					<div
+						class="inline-flex rounded-lg bg-[color:color-mix(in_srgb,var(--wood-500)_14%,transparent)] p-3 text-[var(--wood-800)]">
+						<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+							<path stroke-linecap="round" stroke-linejoin="round" [attr.d]="infra.icon" />
+						</svg>
+					</div>
+					<h3 class="mt-4 font-display text-xl font-bold text-[var(--wood-900)]">{{ infra.title }}</h3>
+					<p class="mt-2 text-sm leading-relaxed text-[var(--muted)]">{{ infra.text }}</p>
+				</div>
+			</article>
+			}
+		</div>
+	</section>
+
+	<!-- Timeline / Journey Section -->
+	<section class="mt-12" [@fadeInUp]>
+		<h2 class="text-3xl text-[var(--wood-900)] md:text-4xl">Our Journey</h2>
+		<p class="mt-2 text-sm text-[var(--muted)]">A legacy built on customer satisfaction, practical guidance, and
+			durable hardware options.</p>
+
+		<div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" [@staggerCards]>
+			@for (item of timeline; track item.year) {
+			<article
+				class="timeline-item section-card stagger-item p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+				<p class="text-sm font-bold text-[var(--wood-700)]">{{ item.year }}</p>
+				<h3 class="mt-2 text-lg font-bold text-[var(--wood-900)]">{{ item.title }}</h3>
+				<p class="mt-2 text-sm leading-relaxed text-[var(--muted)]">{{ item.text }}</p>
+			</article>
+			}
+		</div>
+	</section>
+
+	<!-- Mission & Values Section -->
+	<div class="section-card mt-12 grid gap-5 p-6 md:grid-cols-2 md:p-8" [@fadeInUp]>
+		<div>
+			<h2 class="text-2xl text-[var(--wood-900)]">Our Mission</h2>
+			<p class="mt-2 text-[var(--muted)] leading-relaxed">
+				To supply premium quality Gurjan core plywood, modern decorative finishes, and durable structural boards
+				at transparent pricing, enabling carpenters and interior designers to build lifetime furniture setups.
+			</p>
+		</div>
+
+		<div>
+			<h2 class="text-2xl text-[var(--wood-900)]">Our Values</h2>
+			<ul class="mt-2 list-disc space-y-1 pl-5 text-[var(--muted)]">
+				<li>Uncompromising quality selection across all hardware lines</li>
+				<li>Carpenter-centric structural solutions and calculators</li>
+				<li>Fostering long-term customer trust over short-term sales</li>
+				<li>Consistent bulk logistics support for contractors and residential teams</li>
+			</ul>
+		</div>
+	</div>
 </section>
